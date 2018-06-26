@@ -1,14 +1,10 @@
-```
-cd src/main
-```
+reactjs app created using:
 
 ```
 npx create-react-app js
 ```
 
-```
-cd js
-```
+Then create link from /js/build to ../resources/static:
 
 ```
 ln -s ./build ../resources/static
