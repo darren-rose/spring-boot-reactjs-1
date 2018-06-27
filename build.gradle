@@ -37,3 +37,13 @@ task jsBuild(type : Exec) {
 	workingDir './src/main/js'
 	commandLine 'npm', 'run', 'build'
 }
+
+task jsCopy(type : Copy) {
+	from "./src/main/js/build"
+    include "**/*.*"
+	into "./src/main/resources/static"
+}
+
+task jsDist(type : GradleBuild) {
+    tasks = [ "jsBuild", "jsCopy"]
+}
