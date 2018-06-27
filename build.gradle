@@ -29,16 +29,25 @@ dependencies {
 }
 
 task jsInstall(type : Exec) {
+    group 'javascript'
+    description 'resolve javascript dependencies'
+
 	workingDir './src/main/js'
 	commandLine 'npm', 'install'
 }
 
 task jsBuild(type : Exec) {
+    group 'javascript'
+    description 'build javascript'
+
 	workingDir './src/main/js'
 	commandLine 'npm', 'run', 'build'
 }
 
 task jsCopy(type : Copy) {
+    group 'javascript'
+    description 'copy javascript to resources folder'
+
 	from "./src/main/js/build"
     include "**/*.*"
 	into "./src/main/resources/static"
